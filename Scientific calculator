@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online scientific calculator with advanced functions. Works offline. Perfect for students, engineers, and scientists.">
+    <meta name="keywords" content="scientific calculator, online calculator, math tool, engineering calculator, physics calculator">
+    <meta name="azizullah nasar" content="SciCalc Pro">
+    <meta property="og:title" content="Advanced Scientific Calculator | Free Online Tool">
+    <meta property="og:description" content="Full-featured scientific calculator with graphing, equations, and unit conversions. Works offline.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/scientific-calculator">
+    <title>Scientific Calculator | Advanced Math Tool Online</title>
+    <link rel="canonical" href="https://yourwebsite.com/scientific-calculator">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary: #4285f4;
+            --secondary: #34a853;
+            --accent: #ea4335;
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #dadce0;
+            --dark-gray: #5f6368;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .ad-container {
+            margin: 1.5rem 0;
+            text-align: center;
+            background-color: var(--gray);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .ad-label {
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .calculator-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .calculator {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .display {
+            padding: 1.5rem;
+            background-color: var(--dark);
+            color: white;
+            text-align: right;
+            font-size: 1.5rem;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .history {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            min-height: 1.2rem;
+            margin-bottom: 0.5rem;
+            word-break: break-all;
+        }
+
+        .current-input {
+            font-size: 2rem;
+            word-break: break-all;
+        }
+
+        .keypad {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1px;
+            background-color: var(--gray);
+        }
+
+        .btn {
+            border: none;
+            padding: 1rem;
+            font-size: 1.1rem;
+            background-color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #f1f1f1;
+        }
+
+        .btn-operator {
+            background-color: #f1f3f4;
+            font-weight: 500;
+        }
+
+        .btn-function {
+            background-color: #e8f0fe;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .btn-equals {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 500;
+        }
+
+        .btn-clear {
+            background-color: #fce8e6;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .programs-panel {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+
+        .programs-panel h2 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .program-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--dark-gray);
+            position: relative;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .program-list {
+            list-style: none;
+        }
+
+        .program-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .program-list li:hover {
+            color: var(--primary);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column ul li a {
+            color: #bdc1c6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #3c4043;
+            color: #9aa0a6;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 0.75rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .keypad {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .btn-scientific {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calculator {
+                min-width: 100%;
+            }
+
+            .programs-panel {
+                min-width: 100%;
+            }
+
+            .btn {
+                padding: 0.75rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="/" class="logo">Sci<span>Calc</span></a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/features">Features</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Top Ad Banner -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client=ca-app-pub-8207870960978854/2848989186"
+                 data-ad-slot="YOUR_"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <section class="hero">
+            <h1>Advanced Scientific Calculator</h1>
+            <p>Full-featured calculator with scientific functions, equations, and offline capability. Perfect for students, engineers, and scientists.</p>
+        </section>
+
+        <div class="calculator-container">
+            <div class="calculator">
+                <div class="display">
+                    <div class="history" id="history"></div>
+                    <div class="current-input" id="current-input">0</div>
+                </div>
+                <div class="keypad">
+                    <button class="btn btn-clear" onclick="clearAll()">AC</button>
+                    <button class="btn btn-function" onclick="backspace()">⌫</button>
+                    <button class="btn btn-function" onclick="addToInput('%')">%</button>
+                    <button class="btn btn-function" onclick="addToInput('(')">(</button>
+                    <button class="btn btn-function" onclick="addToInput(')')">)</button>
+                    
+                    <button class="btn btn-scientific btn-function" onclick="addFunction('Math.sin(')">sin</button>
+                    <button class="btn btn-scientific btn-function" onclick="addFunction('Math.cos(')">cos</button>
+                    <button class="btn btn-scientific btn-function" onclick="addFunction('Math.tan(')">tan</button>
+                    <button class="btn btn-operator" onclick="addToInput('/')">/</button>
+                    <button class="btn btn-scientific btn-function" onclick="addFunction('Math.sqrt(')">√</button>
+                    
+                    <button class="btn btn-scientific btn-function" onclick="addFunction('Math.log(')">log</button>
+                    <button class="btn btn-scientific btn-function" onclick="addFunction('Math.log10(')">log10</button>
+                    <button class="btn btn-scientific btn-function" onclick="addFunction('Math.pow(')">x^y</button>
+                    <button class="btn btn-operator" onclick="addToInput('*')">×</button>
+                    <button class="btn btn-scientific btn-function" onclick="addFunction('Math.pow(10,')">10^x</button>
+                    
+                    <button class="btn" onclick="addToInput('7')">7</button>
+                    <button class="btn" onclick="addToInput('8')">8</button>
+                    <button class="btn" onclick="addToInput('9')">9</button>
+                    <button class="btn btn-operator" onclick="addToInput('-')">-</button>
+                    <button class="btn btn-scientific btn-function" onclick="addFunction('Math.PI')">π</button>
+                    
+                    <button class="btn" onclick="addToInput('4')">4</button>
+                    <button class="btn" onclick="addToInput('5')">5</button>
+                    <button class="btn" onclick="addToInput('6')">6</button>
+                    <button class="btn btn-operator" onclick="addToInput('+')">+</button>
+                    <button class="btn btn-scientific btn-function" onclick="addFunction('Math.E')">e</button>
+                    
+                    <button class="btn" onclick="addToInput('1')">1</button>
+                    <button class="btn" onclick="addToInput('2')">2</button>
+                    <button class="btn" onclick="addToInput('3')">3</button>
+                    <button class="btn btn-equals" onclick="calculate()">=</button>
+                    <button class="btn btn-scientific btn-function" onclick="addFunction('factorial(')">n!</button>
+                    
+                    <button class="btn" onclick="addToInput('0')">0</button>
+                    <button class="btn" onclick="addToInput('.')">.</button>
+                    <button class="btn btn-scientific btn-function" onclick="addFunction('Math.abs(')">|x|</button>
+                    <button class="btn btn-scientific btn-function" onclick="addFunction('Math.pow(')">x^2</button>
+                    <button class="btn btn-scientific btn-function" onclick="addFunction('Math.pow(')">x^3</button>
+                </div>
+            </div>
+
+            <div class="programs-panel">
+                <h2>Scientific Programs</h2>
+                <div class="program-tabs">
+                    <button class="tab-btn active" onclick="openTab('math')">Mathematics</button>
+                    <button class="tab-btn" onclick="openTab('physics')">Physics</button>
+                    <button class="tab-btn" onclick="openTab('engineering')">Engineering</button>
+                </div>
+                
+                <div id="math" class="tab-content active">
+                    <ul class="program-list">
+                        <li onclick="loadProgram('quadratic')">Quadratic Equation Solver</li>
+                        <li onclick="loadProgram('linear')">Linear Equation Solver</li>
+                        <li onclick="loadProgram('matrix')">Matrix Calculator</li>
+                        <li onclick="loadProgram('statistics')">Statistics Calculator</li>
+                        <li onclick="loadProgram('trigonometry')">Trigonometry Calculator</li>
+                    </ul>
+                </div>
+                
+                <div id="physics" class="tab-content">
+                    <ul class="program-list">
+                        <li onclick="loadProgram('kinematics')">Kinematics Calculator</li>
+                        <li onclick="loadProgram('thermodynamics')">Thermodynamics Calculator</li>
+                        <li onclick="loadProgram('electricity')">Electricity Calculator</li>
+                        <li onclick="loadProgram('optics')">Optics Calculator</li>
+                        <li onclick="loadProgram('quantum')">Quantum Calculator</li>
+                    </ul>
+                </div>
+                
+                <div id="engineering" class="tab-content">
+                    <ul class="program-list">
+                        <li onclick="loadProgram('circuit')">Circuit Analysis</li>
+                        <li onclick="loadProgram('mechanics')">Mechanics Calculator</li>
+                        <li onclick="loadProgram('fluid')">Fluid Dynamics</li>
+                        <li onclick="loadProgram('conversion')">Unit Conversion</li>
+                        <li onclick="loadProgram('material')">Material Properties</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Ad Banner -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_MIDDLE_AD_SLOT"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <section class="features">
+            <div class="feature-card">
+                <i class="fas fa-calculator"></i>
+                <h3>300+ Functions</h3>
+                <p>Trigonometry, logarithms, exponents, and more advanced mathematical operations.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Offline Access</h3>
+                <p>Works completely offline - perfect for exams or remote locations.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-tachometer-alt"></i>
+                <h3>High Performance</h3>
+                <p>Instant calculations with our optimized JavaScript engine.</p>
+            </div>
+        </section>
+
+        <!-- Bottom Ad Banner -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_BOTTOM_AD_SLOT"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>SciCalc</h3>
+                <p>Advanced scientific calculator for students and professionals.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="/tutorials">Calculator Tutorials</a></li>
+                    <li><a href="/formulas">Math Formulas</a></li>
+                    <li><a href="/examples">Examples</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container copyright">
+            <p>&copy; <span id="year"></span> SciCalc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // Calculator functionality
+            let currentInput = '0';
+            let history = '';
+            let resetInput = false;
+            
+            const currentInputElement = document.getElementById('current-input');
+            const historyElement = document.getElementById('history');
+            
+            function updateDisplay() {
+                currentInputElement.textContent = currentInput;
+                historyElement.textContent = history;
+            }
+            
+            function addToInput(value) {
+                if (resetInput) {
+                    currentInput = '0';
+                    resetInput = false;
+                }
+                
+                if (currentInput === '0' && value !== '.') {
+                    currentInput = value;
+                } else {
+                    currentInput += value;
+                }
+                
+                updateDisplay();
+            }
+            
+            function addFunction(func) {
+                if (resetInput) {
+                    currentInput = '0';
+                    resetInput = false;
+                }
+                
+                if (currentInput === '0') {
+                    currentInput = func + ')';
+                } else {
+                    currentInput = func + currentInput + ')';
+                }
+                
+                updateDisplay();
+            }
+            
+            function clearAll() {
+                currentInput = '0';
+                history = '';
+                updateDisplay();
+            }
+            
+            function backspace() {
+                if (currentInput.length === 1) {
+                    currentInput = '0';
+                } else {
+                    currentInput = currentInput.slice(0, -1);
+                }
+                updateDisplay();
+            }
+            
+            function calculate() {
+                try {
+                    history = currentInput + ' =';
+                    // Replace visual symbols with JavaScript compatible ones
+                    let expression = currentInput
+                        .replace(/×/g, '*')
+                        .replace(/÷/g, '/')
+                        .replace(/\^/g, '**')
+                        .replace(/√\(/g, 'Math.sqrt(')
+                        .replace(/π/g, 'Math.PI')
+                        .replace(/e/g, 'Math.E');
+                    
+                    // Custom factorial function
+                    function factorial(n) {
+                        if (n < 0) return NaN;
+                        if (n <= 1) return 1;
+                        return n * factorial(n - 1);
+                    }
+                    
+                    // Evaluate the expression
+                    currentInput = eval(expression).toString();
+                    resetInput = true;
+                    updateDisplay();
+                } catch (error) {
+                    currentInput = 'Error';
+                    updateDisplay();
+                    setTimeout(() => {
+                        currentInput = '0';
+                        updateDisplay();
+                    }, 1500);
+                }
+            }
+            
+            // Tab functionality
+            function openTab(tabName) {
+                const tabContents = document.getElementsByClassName('tab-content');
+                for (let i = 0; i < tabContents.length; i++) {
+                    tabContents[i].classList.remove('active');
+                }
+                
+                const tabButtons = document.getElementsByClassName('tab-btn');
+                for (let i = 0; i < tabButtons.length; i++) {
+                    tabButtons[i].classList.remove('active');
+                }
+                
+                document.getElementById(tabName).classList.add('active');
+                event.currentTarget.classList.add('active');
+            }
+            
+            // Program loader (simplified)
+            function loadProgram(programName) {
+                alert(`Loading ${programName} program...\n\nIn a full implementation, this would load specialized calculation functions for ${programName}.`);
+                // Here you would typically load different calculation modules
+            }
+            
+            // Initialize display
+            updateDisplay();
+            
+            // Initialize AdSense
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        });
+    </script>
+</body>
+</html>
